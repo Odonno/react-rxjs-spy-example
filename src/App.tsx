@@ -13,14 +13,9 @@ const now$ = interval(1000).pipe(
   tag("now")
 );
 
-export const App = () => {
+const App = () => {
   const now = useObservable<Date>(_ => now$);
-  
-  return (
-    <div>
-      {now && now.toLocaleString()}
-    </div>
-  );
+  return <div>{now && now.toLocaleString()}</div>;
 }
 
 export default App;
